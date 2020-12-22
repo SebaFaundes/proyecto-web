@@ -8,6 +8,7 @@
           <field name="name"/>
           <field name="description"/>
           <field name="supplier"/>
+          <field name="categoria_id"/>
         </tree>
       </field>
     </record>
