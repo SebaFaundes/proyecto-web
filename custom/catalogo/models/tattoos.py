@@ -14,4 +14,6 @@ class TattoosCatalogo(models.Model):
        ("tattoo", "Tattoo"),
        ("piercing", "Piercing"),
        ], string="Categoria", default="tattoo")
+   description = fields.Text(string="Descripción",
+                             default="Breve descripción del producto")    
   

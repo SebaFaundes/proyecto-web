@@ -9,7 +9,7 @@
           <field name="category"/>
           <field name="cost"/>
           <field name="stock"/>
-          <field name="image" widget="image" class="oe_left oe_avatar"/>
+
         </tree>
       </field>
     </record>
@@ -38,6 +38,9 @@
                 <group>
                   <field name="stock"/>
                 </group>
+                </group>
+                <group>
+                    <field name="description"/>
                 </group>   
           </sheet>
         </form>
@@ -45,7 +48,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="catalogo.tattoos_action_window">
-      <field name="name">tattoos window</field>
+      <field name="name">Catalogo</field>
       <field name="res_model">catalogo.tattoos</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -62,8 +65,8 @@
         }
       </field>
     </record>
-    <menuitem name="catalogo" id="catalogo.menu_root"/>
-    <menuitem name="tattoos" id="catalogo.menu_tattoos" parent="catalogo.menu_root"
+    <menuitem name="Catalogo" id="catalogo.menu_root"/>
+    <menuitem name="Catalogo" id="catalogo.menu_tattoos" parent="catalogo.menu_root"
               action="catalogo.tattoos_action_window"/>
     </data>
 </odoo>
