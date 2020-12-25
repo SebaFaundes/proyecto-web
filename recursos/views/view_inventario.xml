@@ -25,8 +25,8 @@
       <field name="arch" type="xml">
         <form string="Recursos">
           <sheet>
+          <field name="image" widget="image" class="oe_left oe_avatar" />
             <group>
-              <field name="image" widget="image" />
               <field name="name" />
               <field name="date" />
             </group>
@@ -60,7 +60,7 @@
       </field>
     </record>
 
-    <!--Menú sección de proveedores-->
+<!--Menú sección de proveedores-->
 
     <record model="ir.ui.view" id="recursos.proveedor_list">
       <field name="name">Proveedor</field>
@@ -73,6 +73,28 @@
           <field name="mail"/>
           <field name="total_proveedor"/>
         </tree>
+      </field>
+    </record>
+
+    <!-- Formulario de proveedores -->
+
+    <record id="recursos.proveedor_view" model="ir.ui.view">
+      <field name="name">Proveedor</field>
+      <field name="model">recursos.proveedor</field>
+      <field name="arch" type="xml">
+        <form string="Proveedor">
+          <sheet>
+            <group>
+              <field name="name" />
+            </group>
+            <group>
+              <field name="description" />
+              <field name="address" />
+              <field name="phone" />
+              <field name="mail" />
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
@@ -95,7 +117,7 @@
       </field>
     </record>
 
-    <!--Sección de categorías-->
+ <!--Sección de categorías-->
 
     <record model="ir.ui.view" id="recursos.categoria_list">
       <field name="name">Categorías</field>
@@ -110,6 +132,20 @@
     </record>
 
     <!--Formulario Categoría-->
+
+    <record id="recursos.categoria_view" model="ir.ui.view">
+      <field name="name">Categoría</field>
+      <field name="model">recursos.categoria</field>
+      <field name="arch" type="xml">
+        <form string="Categoría">
+          <sheet>
+            <group>
+              <field name="name" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
 
     
     <record model="ir.actions.act_window" id="recursos.categoria_action_window">
@@ -134,7 +170,7 @@
 
     <menuitem name="Recursos" id="recursos.menu_root"/>
 
-    <!-- Menus superiores -->
+ <!-- Menus superiores -->
 
     <!-- Menú de inventario -->
     <menuitem name="Inventario" id="recursos.menu_inventario" parent="recursos.menu_root" />

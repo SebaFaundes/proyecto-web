@@ -2,6 +2,18 @@
 
 from odoo import models, fields, api
 
+class Inventario(models.Model):
+     _name = 'recursos.inventario'
+
+     image = fields.Binary(string="Imágen")
+     name = fields.Char(string="Nombre", required=True)
+     description = fields.Text(string="Descripción")
+     date = fields.Date("Fecha de adquisición")
+
+     proveedor_id = fields.Many2one('recursos.proveedor', string="Proveedor")
+
+     categoria_id = fields.Many2one('recursos.categoria', string="Categoría de Recurso")
+
 
 class CategoriaRecurso(models.Model):
      _name = 'recursos.categoria'
@@ -16,18 +28,6 @@ class CategoriaRecurso(models.Model):
      def _total_categoria(self):
           self.total_categoria = len(self.inventario_cat_ids)
 
-
-class Inventario(models.Model):
-     _name = 'recursos.inventario'
-
-     image = fields.Binary(string="Imágen")
-     name = fields.Char(string="Nombre", required=True)
-     description = fields.Text(string="Descripción")
-     date = fields.Date("Fecha de adquisición")
-
-     proveedor_id = fields.Many2one('recursos.proveedor', string="Proveedor")
-
-     categoria_id = fields.Many2one('recursos.categoria', string="Categoría de Recurso")
 
      
 
